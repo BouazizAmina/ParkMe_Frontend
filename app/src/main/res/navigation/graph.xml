@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.packme.interfaces.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_login_to_listParking2"
+            app:destination="@id/listParking"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.packme.interfaces.SignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_listParking"
+            app:destination="@id/listParking" />
+    </fragment>
+    <fragment
+        android:id="@+id/listParking"
+        android:name="com.example.packme.interfaces.ListParking"
+        android:label="fragment_list_parking"
+        tools:layout="@layout/fragment_list_parking" >
+        <action
+            android:id="@+id/action_listParking_to_detailsParking"
+            app:destination="@id/detailsParking" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsParking"
+        android:name="com.example.packme.interfaces.DetailsParking"
+        android:label="fragment_details_parking"
+        tools:layout="@layout/fragment_details_parking" />
+</navigation>
