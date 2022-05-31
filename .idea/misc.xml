@@ -3,23 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/drawable/ic_baseline_local_phone_24.xml" value="0.1" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.1" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/drawable/ic_baseline_recent_actors_24.xml" value="0.1" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/drawable/ic_baseline_rounded_corner_24.xml" value="0.1" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/activity_details_parking.xml" value="0.14010416666666667" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/activity_liste_parking.xml" value="0.1640625" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/fragment_details_parking.xml" value="0.14010416666666667" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/fragment_list_parking.xml" value="0.14010416666666667" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/fragment_login.xml" value="0.16666666666666666" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/fragment_sign_up.xml" value="0.16666666666666666" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/parking.xml" value="0.1640625" />
-        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/parking_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/activity_main.xml" value="0.109375" />
       </map>
     </option>
   </component>

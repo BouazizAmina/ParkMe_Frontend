@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/graph"
-    app:startDestination="@id/login">
+    app:startDestination="@id/listParking">
 
     <fragment
         android:id="@+id/login"
@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_listParking_to_detailsParking"
             app:destination="@id/detailsParking" />
+        <action
+            android:id="@+id/action_listParking_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/detailsParking"
