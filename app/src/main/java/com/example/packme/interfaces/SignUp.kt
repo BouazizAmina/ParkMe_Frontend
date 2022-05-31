@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.packme.R
+import com.example.packme.databinding.FragmentLoginBinding
 
 
 class SignUp : Fragment() {
@@ -14,8 +15,7 @@ class SignUp : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+        return null
     }
 
 

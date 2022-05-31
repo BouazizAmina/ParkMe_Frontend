@@ -41,19 +41,20 @@ class Reservation : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.floatingActionButton.setOnClickListener {
             val cal = Calendar.getInstance()
-            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, heureA, minA ->
                 cal.set(Calendar.HOUR_OF_DAY, heureA)
                 cal.set(Calendar.MINUTE, minA)
-                binding.timeA.setText(SimpleDateFormat("HH:mm").format(cal.time))
+                binding.timeA.setText(String.format("%d : %d",heureA,minA))
             }
             TimePickerDialog(requireActivity(), timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+
         }
         binding.floatingActionButton2.setOnClickListener {
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, heureD)
                 cal.set(Calendar.MINUTE, minD)
-                binding.timeA.setText(SimpleDateFormat("HH:mm").format(cal.time))
+                binding.timeA.setText(String.format("%d : %d",heureD,minD))
             }
             TimePickerDialog(requireActivity(), timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
