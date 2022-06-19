@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/activity_main.xml" value="0.109375" />
+        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/fragment_list_parking.xml" value="0.16666666666666666" />
+        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/fragment_login.xml" value="0.1078125" />
+        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/fragment_sign_up.xml" value="0.13489583333333333" />
+        <entry key="..\:/2CS S2/TDM/PROJET/PackMe/app/src/main/res/layout/parking_layout.xml" value="0.1796875" />
       </map>
     </option>
   </component>

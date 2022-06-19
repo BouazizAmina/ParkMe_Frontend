@@ -11,13 +11,13 @@ import retrofit2.http.POST
 
 interface Endpoint {
 
-    @GET("gestionParking/getAllParkings")
+    @GET("/parkings/getAllParkings")
     suspend fun getAllParkings(): Response<List<Parking>>
 
     @POST("gestionParking/getParkingByName")
     suspend fun getParkingByName(@Body nom: String): Response<List<Parking>>
 
-    @POST("getuser")
+    @POST("utilisateur/seconnecter")
     suspend fun seConnecter(@Body utilisateur: Utilisateur): Response<String>
 
     @POST("utilisateur/sinscrire")
