@@ -5,7 +5,7 @@ import java.io.Serializable
 class Parking (
     val id : Int,
     val nom:String,
-    val image: Int,
+    val image: String,
     val etat:String,
     val commune:String,
     val latitude:Float,

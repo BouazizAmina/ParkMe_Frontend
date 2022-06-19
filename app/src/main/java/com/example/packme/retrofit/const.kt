@@ -1,3 +1,3 @@
 package com.example.packme.retrofit
 
-const val url = "https://b7f5-129-45-27-142.ngrok.io/"
+const val url = "https://5a3d-41-220-151-24.ngrok.io/"

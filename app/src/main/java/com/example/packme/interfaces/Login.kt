@@ -39,6 +39,7 @@ class Login : Fragment() {
         var pr = binding.progressBar
         pr.visibility = View.GONE
         var login = binding.loginButton
+        var signup = binding.signup
 
         login.setOnClickListener {
             var email = binding.email.text.toString()
@@ -72,21 +73,11 @@ class Login : Fragment() {
 
             })
 
-//            if ( ) {
-//                val sharedPreference =  getSharedPreferences("pref", Context.MODE_PRIVATE)
-//                sharedPreference.edit {
-//                    putBoolean("connected",true)
-//                    putString("email",emailValue)
-//                }
-//
-//                val intent = Intent(this@MainActivity, ListeParking::class.java)
-//                startActivity(intent)
-//                finish()
-//
-//            } else {
-//                Toast.makeText(this@MainActivity, response.message(), Toast.LENGTH_LONG).show()
-//            }
-
         }
+
+        signup.setOnClickListener {
+            view.findNavController().navigate(R.id.action_login_to_signUp)
+        }
+
     }
 }

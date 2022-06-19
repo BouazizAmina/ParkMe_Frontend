@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.packme.entity.Parking
 import com.example.packme.R
+import com.example.packme.load
 
 class AdapterParking (private val onItemClicked: (position: Int) -> Unit,val context: Context,var data:List<Parking>):RecyclerView.Adapter<AdapterParking.MyViewHolder>()
 {
@@ -30,9 +31,9 @@ class AdapterParking (private val onItemClicked: (position: Int) -> Unit,val con
             else{
                 etat.setTextColor(Color.GREEN)
             }
-//            taux.text = data[position].taux.toString() + "%"
+            taux.text = (data[position].placeOcc/data[position].taille).toString() + "%"
 //            image.setImageResource(data[position].image).toString()
-//            image.load(data[position].image)
+            image.load(data[position].image)
 //            commune.text = data[position].commune
 //            distance.text = data[position].distance.toString() + " km"
 //            duree.text = data[position].duree.toString() + " min"
@@ -47,8 +48,8 @@ class AdapterParking (private val onItemClicked: (position: Int) -> Unit,val con
         val taux = view.findViewById (R.id.taux) as TextView
         val nom = view.findViewById (R.id.nom) as TextView
         val commune = view.findViewById (R.id.commune) as TextView
-        val distance = view.findViewById (R.id.distance) as TextView
-        val duree = view.findViewById (R.id.duree) as TextView
+//        val distance = view.findViewById (R.id.distance) as TextView
+//        val duree = view.findViewById (R.id.duree) as TextView
         init {
             itemView.setOnClickListener(this)
         }
