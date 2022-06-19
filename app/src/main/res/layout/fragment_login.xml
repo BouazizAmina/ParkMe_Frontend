@@ -11,16 +11,16 @@
         android:id="@+id/email"
         android:layout_width="350dp"
         android:layout_height="55dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="88dp"
         android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="10dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_gmail_button"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button"></EditText>
 
     <EditText
         android:id="@+id/password"
@@ -62,6 +62,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     <Button
         android:id="@+id/login_button"
         android:layout_width="350dp"
@@ -78,57 +87,42 @@
         app:layout_constraintTop_toBottomOf="@+id/password"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/login_gmail_button"
-        android:layout_width="350dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
-        android:text="se connecter avec Gmail"
-        android:textAllCaps="false"
-        android:textColor="#45439B"
-        android:textSize="18dp"
-        app:backgroundTint="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:strokeColor="@color/colordarkblue"
-        app:strokeWidth="2dp" />
-
     <View
         android:id="@+id/second_divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
+        android:layout_marginTop="50dp"
         android:background="@color/colorDefault"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text"
-        app:layout_constraintTop_toBottomOf="@+id/login_gmail_button"
-        app:layout_constraintVertical_bias="0.446" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_marginBottom="21dp"
-        android:text="OR"
+        android:layout_marginBottom="30dp"
+        android:text="OU"
         android:textColor="@color/colorDefault"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toStartOf="@+id/second_divider"
         app:layout_constraintStart_toEndOf="@+id/first_divider"
-        app:layout_constraintTop_toBottomOf="@+id/login_gmail_button" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button"
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/first_divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
+        android:layout_marginTop="50dp"
         android:background="@color/colorDefault"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toStartOf="@+id/text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_gmail_button"
-        app:layout_constraintVertical_bias="0.446" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/second_divider2"
@@ -157,7 +151,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="62dp"
-        android:text="OR"
+        android:text="OU"
         android:textColor="@color/colorDefault"
         app:layout_constraintBottom_toBottomOf="@+id/first_divider2"
         app:layout_constraintEnd_toStartOf="@+id/second_divider2"
@@ -187,7 +181,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
