@@ -4,26 +4,20 @@ import android.Manifest
 import android.content.Context
 import android.content.Context.LOCATION_SERVICE
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
-import android.media.audiofx.BassBoost
 import android.os.Bundle
 import android.provider.Settings
-import android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -32,8 +26,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.packme.R
 import com.example.packme.adapter.AdapterParking
 import com.example.packme.databinding.FragmentListParkingBinding
-import com.example.packme.databinding.FragmentLoginBinding
-import com.example.packme.viewModel.UtilisateurModel
+import com.example.packme.entity.PotitionUser
+import com.example.packme.entity.Utilisateur
+import com.example.packme.viewModel.ParkingModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import java.util.*
@@ -43,10 +38,12 @@ class ListParking : Fragment() {
     private val permissionId = 2
     private lateinit var binding: FragmentListParkingBinding
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
-    private  lateinit var locationUser: Location
+    var locationUser = Location("")
+//    private  lateinit var locationUser: Location
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
+//        locationUser = new Location("dummyprovider");
         getLocation()
 
     }
@@ -64,22 +61,23 @@ class ListParking : Fragment() {
         val bool = sharedPreference.getBoolean("connected",false)
         if(!bool){
             view.findNavController().navigate(R.id.action_listParking_to_login)
-
         }else{
             val value = sharedPreference.getString("email","value")
             Toast.makeText(requireActivity(), "your email is: "+value , Toast.LENGTH_LONG).show()
         }
 
 
-        /*var pr = binding.progressBar4
-        pr.visibility = View.VISIBLE
+        var pr = binding.progressBar4
+//        pr.visibility = View.VISIBLE
 
         val recyclerView = binding.recyclerView
         val layoutManager = LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL,false)
         recyclerView.layoutManager = layoutManager
 
-        val vm = ViewModelProvider(this).get(UtilisateurModel::class.java)
+        val vm = ViewModelProvider(this).get(ParkingModel::class.java)
+//        val pos = PotitionUser(locationUser.longitude.toString(),locationUser.latitude.toString())
         vm.getParkings()
+        println("test  "+vm.dataParking.toString())
         vm.loadingParking.observe(requireActivity(), Observer {  loading->
             if(loading) {
                 pr.visibility = View.VISIBLE
@@ -91,7 +89,7 @@ class ListParking : Fragment() {
                     recyclerView.adapter = AdapterParking({ position -> onClickDevice(position)},requireActivity(),data)
                 })
             }
-        })*/
+        })
     }
 
 
@@ -125,7 +123,7 @@ class ListParking : Fragment() {
                         val list: List<Address> =
                             geocoder.getFromLocation(location.latitude, location.longitude, 1)
                             locationUser = location
-                            binding.lon.setText(locationUser.longitude.toString())
+//                            binding.lon.setText(locationUser.longitude.toString())
 
 
                     }

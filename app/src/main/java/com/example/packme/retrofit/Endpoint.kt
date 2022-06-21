@@ -1,6 +1,8 @@
 package com.example.packme.retrofit
 
+//import com.example.packme.`object`.ParkingList
 import com.example.packme.entity.Parking
+import com.example.packme.entity.PotitionUser
 import com.example.packme.entity.Utilisateur
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -10,6 +12,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface Endpoint {
+
+//    @POST("/parkings/getAllParkings")
+//    suspend fun getAllParkings(@Body pos:PotitionUser): Response<List<Parking>>
 
     @GET("/parkings/getAllParkings")
     suspend fun getAllParkings(): Response<List<Parking>>
