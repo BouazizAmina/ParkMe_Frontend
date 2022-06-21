@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.Context.LOCATION_SERVICE
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
@@ -40,6 +41,7 @@ class ListParking : Fragment() {
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     var locationUser = Location("")
 //    private  lateinit var locationUser: Location
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
@@ -77,7 +79,6 @@ class ListParking : Fragment() {
         val vm = ViewModelProvider(this).get(ParkingModel::class.java)
 //        val pos = PotitionUser(locationUser.longitude.toString(),locationUser.latitude.toString())
         vm.getParkings()
-        println("test  "+vm.dataParking.toString())
         vm.loadingParking.observe(requireActivity(), Observer {  loading->
             if(loading) {
                 pr.visibility = View.VISIBLE
@@ -93,11 +94,17 @@ class ListParking : Fragment() {
     }
 
 
+//    private fun onClickDevice(position: Int) {
+//        //Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show()
+//        val intent = Intent(this,ParkingDetails::class.java)
+//        intent.apply { putExtra("parking"
+//            , loadData()[position])
+//        }
+//        startActivity(intent)
+//    }
 
     private fun onClickDevice(position: Int) {
         var bundle = bundleOf("position" to position)
-//        var bundle = Bundle()
-//        bundle.putInt("position",position)
         view?.findNavController()?.navigate(R.id.action_listParking_to_detailsParking,bundle)
     }
 

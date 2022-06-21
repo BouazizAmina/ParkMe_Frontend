@@ -56,6 +56,8 @@ class ParkingModel : ViewModel() {
         }
     }
 
+
+
     private fun onError(message: String) {
         errorMessage.value = message
         loading.value = false
