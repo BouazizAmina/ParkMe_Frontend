@@ -35,10 +35,10 @@ class DetailsParking : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        /*super.onViewCreated(view, savedInstanceState)
         val vm = ViewModelProvider(this).get(ParkingModel::class.java)
 //        val pos = PotitionUser(locationUser.longitude.toString(),locationUser.latitude.toString())
-        vm.getParkings()
+        vm.getParkings(null)
         vm.dataParking.observe(requireActivity(), Observer {  data ->
             val list = data
 
@@ -68,7 +68,7 @@ class DetailsParking : Fragment() {
 
         })
 
-
+*/
 
     }
 

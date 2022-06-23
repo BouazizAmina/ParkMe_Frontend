@@ -3,6 +3,7 @@ package com.example.packme.adapter
 import android.content.Context
 import android.graphics.Color
 import android.icu.text.DecimalFormat
+import android.icu.text.SimpleDateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.packme.R
 import com.example.packme.entity.Parking
 import com.example.packme.load
+import java.util.*
+import kotlin.math.roundToInt
+import kotlin.time.Duration.Companion.hours
+import kotlin.time.hours
 
 class AdapterParking (private val onItemClicked: (position: Int) -> Unit,val context: Context,var data:List<Parking>):RecyclerView.Adapter<AdapterParking.MyViewHolder>()
 {
@@ -31,16 +36,24 @@ class AdapterParking (private val onItemClicked: (position: Int) -> Unit,val con
 //            println(data[position].placeOcc)
             image.load(data[position].image)
             commune.text = data[position].commune
-//            etat.text =  data[position].etat
-            etat.text = "Fermé"
-            if(etat.text == "Fermé"){
-                etat.setTextColor(Color.RED)
-            }
-            else{
-                etat.setTextColor(Color.GREEN)
-            }
-//            distance.text = data[position].distance.toString() + " km"        A CALCULER
-//            duree.text = data[position].duree.toString() + " min"             A CALCULER
+//            etat.text =  data[position].etat etat se calcule
+
+                val tempsOuv = data[position].tempsOuv
+                val tempsFerm = data[position].tempsFerm
+                val time =Date()
+                if(time.hours>tempsOuv.hours && time.hours<tempsFerm.hours){
+                    etat.text = "Ouvert"
+                    etat.setTextColor(Color.GREEN)
+
+                }
+                else{
+                    etat.text = "Fermé"
+                    etat.setTextColor(Color.RED)
+                }
+
+            distance.text = ((data[position].distance?.times(100.0))?.roundToInt()?.div(100.0)).toString()+ " km"
+            duree.text = (((data[position].duree?.div(60))?.times(100.0))?.roundToInt()?.div(100.0)).toString() + " min"
+
         }
     }
 
@@ -52,8 +65,8 @@ class AdapterParking (private val onItemClicked: (position: Int) -> Unit,val con
         val nom = view.findViewById (R.id.nom) as TextView
         val etat = view.findViewById (R.id.etat) as TextView
         val commune = view.findViewById (R.id.commune) as TextView
-//        val distance = view.findViewById (R.id.distance) as TextView
-//        val duree = view.findViewById (R.id.duree) as TextView
+        val distance = view.findViewById (R.id.distance) as TextView
+        val duree = view.findViewById (R.id.duree) as TextView
         init {
             itemView.setOnClickListener(this)
         }

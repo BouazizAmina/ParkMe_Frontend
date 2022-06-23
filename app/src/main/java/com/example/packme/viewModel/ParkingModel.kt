@@ -1,13 +1,11 @@
 package com.example.packme.viewModel
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 //import com.example.packme.`object`.ParkingList
 import com.example.packme.entity.Parking
-import com.example.packme.entity.PotitionUser
-import com.example.packme.entity.Utilisateur
+import com.example.packme.entity.PositionUser
 import com.example.packme.retrofit.Endpoint
 import kotlinx.coroutines.*
 
@@ -42,14 +40,14 @@ class ParkingModel : ViewModel() {
 //        }
 //    }
 
-    fun getParkings(){
+    fun getParkings(pos: PositionUser){
         CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = Endpoint.createInstance().getAllParkings()
+            val response = Endpoint.createInstance().getAllParkings(pos)
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful ) {
                     loadingParking.value = false
                     dataParking.postValue(response.body())
-                } else {
+                }  else {
                     onError(response.message())
                 }
             }

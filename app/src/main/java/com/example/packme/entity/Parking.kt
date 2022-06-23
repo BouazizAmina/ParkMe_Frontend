@@ -1,6 +1,7 @@
 package com.example.packme.entity
 
 import java.io.Serializable
+import java.util.*
 
 class Parking (
     val id : Int,
@@ -8,10 +9,12 @@ class Parking (
     val commune:String,
     val latitude:Float,
     val longitude: Float,
-    val etat:String,
     val taille: Int,
     val placeOcc: Int,
     val image: String,
     val prix: Int,
-    val tempsOuv:String,
-    val tempsFerm: String): Serializable
+    val tempsOuv:Date,
+    val tempsFerm: Date,
+    var duree:Double?=null,
+    var distance:Double?=null
+    ): Serializable
