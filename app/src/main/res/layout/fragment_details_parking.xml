@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDefault"
+    android:background="@color/white"
     tools:context=".interfaces.DetailsParking">
 
     <ImageView
         android:id="@+id/imageParking"
-        android:layout_width="416dp"
-        android:layout_height="270dp"
+        android:layout_width="403dp"
+        android:layout_height="249dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -190,7 +190,7 @@
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="203dp"
+                android:layout_width="186dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="heure(s)"
@@ -198,7 +198,7 @@
 
             <TextView
                 android:id="@+id/price"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:text="120.00 "
@@ -206,7 +206,7 @@
 
             <TextView
                 android:id="@+id/textView16"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:text="DZD"
@@ -214,12 +214,12 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="383dp"
+            android:id="@+id/showTrack"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#13A79D"
             android:text="Afficher l’itinéraire "
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
         <Button
             android:id="@+id/button"

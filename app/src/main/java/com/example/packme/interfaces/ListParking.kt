@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.packme.R
 import com.example.packme.adapter.AdapterParking
 import com.example.packme.databinding.FragmentListParkingBinding
+import com.example.packme.entity.Parking
 import com.example.packme.entity.PositionUser
 import com.example.packme.viewModel.ParkingModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -35,7 +36,8 @@ import com.google.android.gms.location.LocationServices
 class ListParking : Fragment() {
     private lateinit var binding: FragmentListParkingBinding
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private  lateinit var locationUser: Location
+    private lateinit var locationUser: Location
+    private lateinit var pos: PositionUser
 
 
     override fun onCreateView(
@@ -74,7 +76,7 @@ class ListParking : Fragment() {
         val pr = binding.progressBar4
         Toast.makeText(requireActivity(), "before", Toast.LENGTH_LONG).show()
         val vm = ViewModelProvider(this).get(ParkingModel::class.java)
-        val pos = PositionUser(lon = locationUser.longitude,lat= locationUser.latitude)
+        pos = PositionUser(lon = locationUser.longitude,lat= locationUser.latitude)
         Toast.makeText(requireActivity(), "after l pos", Toast.LENGTH_LONG).show()
         vm.getParkings(pos)
         Toast.makeText(requireActivity(), "after", Toast.LENGTH_LONG).show()
@@ -91,7 +93,7 @@ class ListParking : Fragment() {
                     val recyclerView = binding.recyclerView
                     val layoutManager = LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL,false)
                     recyclerView.layoutManager = layoutManager
-                    recyclerView.adapter = AdapterParking({ position -> onClickDevice(position)},requireActivity(),data)
+                    recyclerView.adapter = AdapterParking({ position -> onClickDevice(vm.dataParking.value!![position])},requireActivity(),data)
                 })
             }
         })
@@ -106,8 +108,8 @@ class ListParking : Fragment() {
 //        startActivity(intent)
 //    }
 
-    private fun onClickDevice(position: Int) {
-        var bundle = bundleOf("position" to position)
+    private fun onClickDevice(parking: Parking) {
+        var bundle = bundleOf("parking" to parking, "location" to pos)
         view?.findNavController()?.navigate(R.id.action_listParking_to_detailsParking,bundle)
     }
 
@@ -119,7 +121,7 @@ class ListParking : Fragment() {
                     var location:Location? = task.result
                     if(location != null){
                         //Log.d("Debug:" ,"Your Location:"+ location.longitude)
-                        Toast.makeText(requireContext(),"You Current Location is : Long: "+ location.longitude + " , Lat: " + location.latitude + "\n",Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(requireContext(),"You Current Location is : Long: "+ location.longitude + " , Lat: " + location.latitude + "\n",Toast.LENGTH_SHORT).show()
                         locationUser = location
                         showParkingsList()
                     }

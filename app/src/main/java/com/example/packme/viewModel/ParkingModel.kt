@@ -1,5 +1,6 @@
 package com.example.packme.viewModel
 
+import android.location.Location
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,12 +12,9 @@ import kotlinx.coroutines.*
 
 class ParkingModel : ViewModel() {
 
-    var data = MutableLiveData<String>()
-//    var dataParking = MutableLiveData<ParkingList>()
     var dataParking = MutableLiveData<List<Parking>>()
     var loading = MutableLiveData<Boolean>()
     var loadingParking = MutableLiveData<Boolean>()
-
     val errorMessage = MutableLiveData<String>()
     val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
 //        onError(throwable.localizedMessage)

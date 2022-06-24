@@ -31,8 +31,8 @@ class AdapterParking (private val onItemClicked: (position: Int) -> Unit,val con
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.apply {
             nom.text = data[position].nom
-            var d = (data[position].placeOcc.toFloat()/data[position].taille)
-            taux.text = df.format(d).toString() + "%"
+            var d = ((data[position].placeOcc.toFloat()/data[position].taille).times(100.0)).roundToInt().toString()
+            taux.text = d+ "%"
 //            println(data[position].placeOcc)
             image.load(data[position].image)
             commune.text = data[position].commune
